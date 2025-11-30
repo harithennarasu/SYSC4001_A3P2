@@ -1,13 +1,13 @@
 # SYSC4001_A3P2 
 
-## Purpose
-This project simulates multiple TA's marking exams concurrently using a separate processes for each TA.
+## Overview
+This project simulates multiple TAs marking batches of exams concurrently, with a unique process being created for each TA. 
 
 - **Part A**  
-Uses shared memory to allow TA's access to data concurrently. However, processes are not synchronized, and no semaphores are used causing race condtions. This leads to undesired output.
+Uses shared memory to allow TAs access to data concurrently. However, the processes are not synchronized, and no semaphores are used. This results in race conditions, leading to undesired output.
 
 - **Part B**  
-Builds on part A by using semaphores to synchronize the processes. This manages race conditions, allowing concurency to be controlled.
+Builds on Part A by introducing semaphores to synchronize access to shared memory. This manages race conditions, allowing the concurrent processes to be controlled.
 
 ## Files
 * #### Part A)
