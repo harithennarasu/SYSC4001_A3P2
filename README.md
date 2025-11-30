@@ -1,33 +1,43 @@
 # SYSC4001_A3P2 
 
-This project uses concurrent processes to simulate multiple TAs marking exams in parallel.
+## Purpose
+This project simulates multiple TA's marking exams concurrently using a separate processes for each TA.
 
-Part A acheives this by using shared memory, but does not use synchronization, or sempahores. Thus, the program runs into race condtions, affecting the output. 
+- **Part A**  
+Uses shared memory to allow TA's access to data concurrently. However, processes are not synchronized, and no semaphores are used causing race condtions. This leads to undesired output.
 
-Part B builds on this by introducing synchronization through the implementation of semaphores. This allowed us to minimize race condtions and meet the criteria of the project.
+- **Part B**  
+Builds on part A by using semaphores to synchronize the processes. This manages race conditions, allowing concurency to be controlled.
 
-Part A Contains)
-MainA.cpp
-PartA_Functions.h
-PartA_Functions.cpp
-rubric.txt
-exam1.txt - exam20.txt
+## Files
+* #### Part A)
+- `mainA_101304027_101310114.cpp`
+- `PartA_101304027_101310114.h`
+- `PartA_101304027_101310114.cpp`
+- `rubric.txt`
+- `exam1.txt` – `exam20.txt`
 
-Part B Contains)
-MainB.cpp
-PartB_Functions.h
-PartB_Functions.cpp
-rubric.txt
-exam1.txt - exam20.txt
+* #### Part B)
+- `mainB_101304027_101310114.cpp`
+- `PartB_101304027_101310114.h`
+- `PartB_101304027_101310114.cpp`
+- `rubric.txt`
+- `exam1.txt` – `exam20.txt`
 
-To Compile Part A)
+## How to Compile and Run
+Note: The value `2` represents the number of TAs passed. This value can be changed to any number ≥ `2`.
+
+### Part A
+```bash
 g++ -o mainA_101304027_101310114 mainA_101304027_101310114.cpp PartA_101304027_101310114.cpp
-./mainA_101304027_101310114 2              
-
-To Compile Part B)
+./mainA_101304027_101310114 2
+```
+### Part B
+```bash
 g++ -o mainB_101304027_101310114 mainB_101304027_101310114.cpp PartB_101304027_101310114.cpp
 ./mainB_101304027_101310114 2
-
-*Note: the 2 represents the amount of TA's passed, this number can be modified to number equal to or greater than 2
-*Note: The first line of the exam files contains the student number. A student of '9999' is used to end execution of both parts. The student numbers of exam file can be modified based on desired output, and program termination.
-*Note: The rubric file contains the rubric values that the TA's may modify. These programs only work with rubric values between 'A' to 'Z.'
+```
+#### Additional Information)
+- The first line of the exam text files contains the student number. A student of `9999` is used to end program execution for both parts. The student numbers of exam text files can be modified to change the output, and terminate the program at different exams. Currently, exam 20 contains `9999`.
+  
+- The rubric file contains the rubric values for each question that the TA's may randomly modify. These programs only work with rubric values between `A to Z`.
